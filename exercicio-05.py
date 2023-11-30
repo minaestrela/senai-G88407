@@ -8,9 +8,9 @@ quest = input("Insira seu nome de usuário: ")
 quest2 = input("Insira a senha: ")
 
 if quest in thisdict: 
-    if thisdict(quest) == quest2:
+    if thisdict[quest] == quest2:
+        print("Nome de usuário válido.")
         print("Login bem-sucedido!")
-    print("Nome de usuário válido.")
 else:
     print("Usuário inválido.")
     
