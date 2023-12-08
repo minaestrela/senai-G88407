@@ -1,0 +1,67 @@
+import re
+
+
+cardapio = {
+    "Duplo Burger Bacon": 25.45,
+    "McChicken": 25.87,
+    "McFlurry": 14.00,
+    "Club House": 46.04
+}
+
+pedido = {
+    
+}
+
+def exibir_cardapio():
+        return
+
+def adicionar_item():
+    ask = input("Insira um item do menu.")
+    if ask in pedido:
+        pedido[ask] = pedido[ask] + 1
+        return 
+    else:
+        if ask in cardapio:
+            return pedido.update({ask: 1})
+
+def remover_item():
+    item = input("Insira um item.")
+    if item in cardapio:
+        if pedido[item] == 1:
+            pedido.pop(item)
+        elif pedido[item] > 1:
+            pedido[item] -= 1
+            return 
+
+def exibir_pedido():
+    print(pedido)
+    
+    for item in cardapio:
+        
+        print(cardapio[item])
+    return
+
+while True:
+    
+    ask = int(input("Insira uma das opções.\n"
+                "(1): Exibir cardápio\n"
+                "(2): Adicionar item\n"
+                "(3): Remover item\n"
+                "(4): Exibir pedido\n"
+                "(5): Sair\n"
+                ": "))
+
+    if ask == 1:
+        print(cardapio)
+    elif ask == 2:
+        adicionar_item()
+    elif ask == 3:
+        remover_item()
+    elif ask == 4:
+        exibir_pedido()
+    elif ask == 5:
+        print("Encerramos por aqui!")
+        break
+    else:
+        print("Opção inválida. Tente novamente.")
+        
