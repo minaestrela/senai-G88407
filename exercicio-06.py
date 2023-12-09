@@ -1,6 +1,7 @@
 import re
 
 
+
 cardapio = {
     "Duplo Burger Bacon": 25.45,
     "McChicken": 25.87,
@@ -9,7 +10,9 @@ cardapio = {
 }
 
 pedido = {
-    
+    "McChicken": 2,
+    "McFlurry": 1,
+    "Club House": 5
 }
 
 def exibir_cardapio():
@@ -36,10 +39,11 @@ def remover_item():
 def exibir_pedido():
     print(pedido)
     
-    for item in cardapio:
-        
-        print(cardapio[item])
-    return
+    total = 0
+    
+    for item in pedido:
+        print(item)
+        total = total + (cardapio[item]*pedido[item])
 
 while True:
     
